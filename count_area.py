@@ -36,9 +36,3 @@ def write_results_to_file(image_name, contours, file_path='area_res.txt'):
             file.write(f"{i}. Square: {area}\n")
             file.write(f"Perimeter: {perimeter}\n")
 
-# # Example usage
-# image_path = "C:/Users/z.kate/source/GitHubRepos/ELC_Fall_git/YOLO_SAM/datasets/valid_all/res_masks/WIN_20221023_15_16_07_Pro_jpg.rf.8a0c8bc3af242d3f85123e89ed585656.jpg"
-# name = "WIN_20221023_15_16_07_Pro_jpg.rf.8a0c8bc3af242d3f85123e89ed585656.jpg"
-# scale_factor = 0.1
-# min_contour_area = 50  # Set your minimum contour area threshold
-# calculate_area_and_perimeter(name, image_path)
