@@ -25,10 +25,7 @@ def show_masks(masks, ax, random_color=False):
         mask_image = mask.reshape(h, w, 1) * color.reshape(1, 1, -1)
         ax.imshow(mask_image)
         return mask_image
-        # os.makedirs('C:/Users/z.kate/source/GitHubRepos/ELC_Fall_git/YOLO_SAM/datasets/valid_all/pred_masks/', exist_ok=True)
-        # mask_save_path = os.path.join('C:/Users/z.kate/source/GitHubRepos/ELC_Fall_git/YOLO_SAM/datasets/valid_all/pred_masks/', "mask.jpg")
-        # mask_pil = Image.fromarray((mask_image * 255).astype(np.uint8))
-        # mask_pil.save(mask_save_path)
+
 
 def overlay_masks_on_black_background(masks_tensor, save_path=None):
     background = np.zeros(masks_tensor.shape[-2:], dtype=np.uint8)  # Черный фон
