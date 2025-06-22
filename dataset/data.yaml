@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['pcb_defect']
+
+roboflow:
+  workspace: diplom-qz7q6
+  project: defects-2q87r
+  version: 8
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/diplom-qz7q6/defects-2q87r/dataset/8

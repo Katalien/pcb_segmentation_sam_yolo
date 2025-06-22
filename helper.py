@@ -86,5 +86,3 @@ def show_raw_image(image_path):
     plt.imshow(image)
     plt.axis('on')
     plt.show()
-
-
