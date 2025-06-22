@@ -2,28 +2,16 @@ import cv2
 import numpy as np
 
 def calculate_area_and_perimeter(image_name, image_path, scale_factor=0.1, min_contour_area=50):
-    # Read the image
     image = cv2.imread(image_path)
-
-    # Check if the image is successfully loaded
     if image is None:
         print(f"Error: Unable to load the image {image_path}")
         return
 
-    # Convert the image to grayscale
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-    # Binarize the image
     _, binary_image = cv2.threshold(gray_image, 128, 255, cv2.THRESH_BINARY)
-
-    # Find contours
     contours, _ = cv2.findContours(binary_image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
-    # Filter out small contours
     filtered_contours = [contour for contour in contours if cv2.contourArea(contour) > min_contour_area]
-
     print("Number of contours after filtering:", len(filtered_contours))
-
     write_results_to_file(image_name, filtered_contours)
     return
 
