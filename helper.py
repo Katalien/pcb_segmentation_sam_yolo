@@ -28,18 +28,18 @@ def show_masks(masks, ax, random_color=False):
 
 
 def overlay_masks_on_black_background(masks_tensor, save_path=None):
-    background = np.zeros(masks_tensor.shape[-2:], dtype=np.uint8)  # Черный фон
+    background = np.zeros(masks_tensor.shape[-2:], dtype=np.uint8)  
 
     for mask in masks_tensor:
-        mask = mask.squeeze().cpu().numpy()  # Преобразование тензора в массив NumPy
-        background += (mask * 255).astype(np.uint8)  # Наложение каждой маски на черный фон
+        mask = mask.squeeze().cpu().numpy()  
+        background += (mask * 255).astype(np.uint8) 
 
-    mask_pil = Image.fromarray(background)  # Создание изображения из массива NumPy
+    mask_pil = Image.fromarray(background)  
 
     if save_path:
-        mask_pil.save(save_path)  # Сохранение изображения
+        mask_pil.save(save_path) 
     else:
-        mask_pil.show()  # Отображение изображения на экране
+        mask_pil.show() 
 
 
 def show_points(coords, labels, ax, marker_size=375):
